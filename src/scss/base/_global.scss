@@ -1,0 +1,38 @@
+@use 'utilities/variables' as var; 
+@use 'utilities/mixins' as mix; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var.$principal-font;
+    font-size: 1.6rem;
+}
+
+p {
+    color: var.$black;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0 0 2rem  0 ;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}

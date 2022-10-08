@@ -1,0 +1,100 @@
+@use 'utilities/variables' as var;
+@use 'utilities/mixins' as mix;
+
+.subscription {
+  background-color: var.$secondary-color;
+  padding: 3rem 0;
+  @include mix.tablet {
+    padding: 8rem 0;
+  }
+  &__title {
+    display: inline-block;
+    margin-top: 5rem;
+    color: var.$white;
+    font-size: 3.6rem;
+    &::after {
+      content: '';
+      width: calc(100% + 1rem);
+      height: 1rem;
+      display: block;
+      background-color: var.$primary-color;
+      margin-top: -1.5rem;
+    }
+    @include mix.tablet {
+      margin-top: 0;
+    }
+  }
+  &__description {
+    color: var.$white;
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+  &__plans {
+    display: flex;
+    flex-direction: column;
+    @include mix.tablet {
+      max-width: 90rem;
+      flex-direction: row;
+      margin-inline: auto;
+      margin-block-start: 10rem;
+    }
+  }
+  &__plan {
+    background-color: var.$white;
+    border-bottom: 1px solid var.$black;
+    padding: 16rem 4rem 4rem 4rem;
+    flex-grow: 1;
+    @include mix.tablet {
+      border: none;
+      transition-property: transform;
+      transition-duration: .3s;
+      &:hover {
+        transform: scale(1.1)
+      }
+    }
+    &--basic {
+      @include mix.bgIcon('../img/icono_inicio.svg');
+    }
+    &--business {
+      background-color: var.$primary-color;
+      order: -1;
+      @include mix.bgIcon('../img/icono_negocio.svg');
+      @include mix.tablet {
+        border-radius: 2rem;
+        margin-top: -5rem;
+        margin-bottom: -5rem;
+        order: unset;
+        z-index: 10;
+      }
+    }
+    &--pro {
+      @include mix.bgIcon('../img/icono_pro.svg');
+    }
+  }
+  &__subtitle {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__list {
+    li {
+      margin-bottom: 2rem;
+      text-align: center;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__button {
+    @include mix.button(var.$primary-color, var.$secondary-color);
+    @include mix.tablet {
+      display: block;
+    }
+    border: 2px solid var.$white;
+    margin-top: 2rem;
+  }
+}

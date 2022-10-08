@@ -1,0 +1,37 @@
+@use 'utilities/variables' as var;
+@use 'utilities/mixins' as mix;
+
+.header {
+  padding: 5rem 0;
+  @include mix.bgImage('../img/header.jpg', var.$secondary-color-opacity);
+  &__logo {
+    max-width: 20rem;
+    margin: 0 auto;
+    @include mix.tablet {
+      margin: 0;
+    }
+  }
+  &__content {
+    padding: 10rem 0;
+    @include mix.desktop {
+      padding: 13rem 0;
+    }
+  }
+  &__title {
+    color: var.$white;
+    line-height: 1.5;
+    font-size: 4rem;
+    text-align: center;
+    @include mix.tablet {
+      max-width: 50%;
+      font-size: 6rem;
+      text-align: left;
+    }
+    @include mix.desktop {
+      max-height: 40%;
+    }
+  }
+  &__button {
+    @include mix.button(var.$primary-color, var.$secondary-color);
+  }
+}

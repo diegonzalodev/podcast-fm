@@ -1,0 +1,50 @@
+@use 'utilities/variables' as var;
+@use 'utilities/mixins' as mix;
+
+.footer {
+  background-color: var.$secondary-color;
+  color: var.$white;
+  &__grid {
+    padding: 5rem 0;
+    @include mix.tablet {
+      @include mix.grid(4, 4rem);
+    }
+  }
+  &__img {
+    max-width: 20rem;
+    margin: 0 auto 5rem auto;
+  }
+  &__box {
+    margin-bottom: 6rem;
+    text-align: center;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    @include mix.tablet {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    h3 {
+      color: var.$primary-color;
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      @include mix.tablet {
+        margin-bottom: 5rem;
+      }
+    }
+    li {
+      line-height: 2.5;
+    }
+    a {
+      color: var.$white;
+      font-size: 1.8rem;
+    }
+  }
+  &__copyright {
+    border-top: .2rem solid var.$primary-color;
+    color: var.$white;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+}
